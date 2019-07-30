@@ -1,11 +1,12 @@
-package com.sandao.javalearning;
+package com.sandao.javalearning.basic.datatype;
 
 /**
+ * 字符串
  * @author maoyanting
  * @version V1.0
  * @date 2019/07/22
  */
-public class StringTest {
+public class String0 {
     public static void main(String[] args) {
         testReplaceAll();
         testTrim();
@@ -20,6 +21,9 @@ public class StringTest {
         System.out.println("驼峰 转 下划线:"+word.replaceAll(regex, "_$1").toLowerCase());
     }
 
+    /**
+     * 去掉头尾空格
+     */
     private static void testTrim(){
         String word = "    去掉头尾空格     ";
         System.out.println(word.trim());

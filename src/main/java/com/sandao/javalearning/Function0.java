@@ -8,11 +8,12 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 /**
+ * jdk1.8的函数练习
  * @author maoyanting
  * @version V1.0
  * @date 2019/07/22
  */
-public class FunctionTest {
+public class Function0 {
     public static void main(String[] args) {
         testConsumer();
         testSupplier();

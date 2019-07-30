@@ -9,7 +9,7 @@ import org.jsoup.nodes.Document;
  * @version V1.0
  * @date 2019/07/26
  */
-public class JsoupText {
+public class Jsoup0 {
     public static void main(String[] args) {
         deleteHtml();
     }

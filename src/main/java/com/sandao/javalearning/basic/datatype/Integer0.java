@@ -1,11 +1,12 @@
-package com.sandao.javalearning;
+package com.sandao.javalearning.basic.datatype;
 
 /**
+ * 整型
  * @author maoyanting
  * @version V1.0
  * @date 2019/07/29
  */
-public class IntegerTest {
+public class Integer0 {
     public static void main(String[] args) {
         testNumberType();
     }
