@@ -1,4 +1,4 @@
-package com.sandao.javalearning;
+package com.sandao.javalearning.utils;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
