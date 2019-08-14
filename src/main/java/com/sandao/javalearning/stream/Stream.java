@@ -1,47 +1,63 @@
 package com.sandao.javalearning.stream;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import com.google.common.collect.Lists;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * 流计算
+ *
  * @author maoyanting
  * @version V1.0
  * @date 2019/08/02
  */
 public class Stream {
-    static {
 
-    }
     public static void main(String[] args) {
-        List<User> userList= new LinkedList<>();
-        User userA = new User();
-        userA.setAge("23");
-        userA.setName("A");
-        userA.setSex("女");
-        User userB = new User();
-        userB.setAge("24");
-        userB.setName("B");
-        userB.setSex("男");
-        userList.add(userA);
-        userList.add(userB);
+        List<User> userList = init();
+        System.out.println("全部用户："+userList);
         testFindAny(userList);
-        testMap(userA);
+        testMap(userList);
     }
 
-    private static void testFindAny(List<User> users){
+    private static List<User> init(){
+        List<User> userList = Lists.newLinkedList();
+        List<String> nameList =  Arrays.asList("张三", "王五", "李白","杜甫","白居易");
+        Random random = new Random();
+        for (int j = 0; j < 5; j++) {
+            User user = new User();
+            user.setAge(random.nextInt(30));
+            user.setName(nameList.get(j));
+            user.setSex(random.nextBoolean()?"男":"女");
+            userList.add(user);
+        }
+        return userList;
+    }
+
+    private static void testFindAny(List<User> users) {
         List<String> sex = new LinkedList<>();
         users.stream()
                 .filter(user -> "女".equals(user.getSex()))
                 .findAny()
                 .ifPresent(user -> sex.add(user.getName()));
-        System.out.println(sex);
+        List<String> nameList = users.stream()
+                .filter(user -> "女".equals(user.getSex()))
+                .map(User::getName)
+                .collect(Collectors.toList());
+        System.out.println("获取某个女性名字："+sex);
+        System.out.println("获取所有女性名字："+nameList);
     }
 
-    private static void testMap(User user){
-        Map<String,String> extend = user.getExtend();
-        extend.put("测试map初始化","测试map初始化");
-        System.out.println(user);
+    private static void testMap(List<User> users) {
+        System.out.println("测试map相关：");
+        /**
+         * mapToInt限制ToIntFunction返回值为整型,mapToLong,MapToBollean同理
+         */
+        System.out.println("获取所有人年龄：");
+        users.stream().mapToInt(User::getAge).forEach(System.out::print);
+        System.out.println("获取所有人姓名：");
+        users.stream().map(User::getName).forEach(System.out::print);
+
     }
 }

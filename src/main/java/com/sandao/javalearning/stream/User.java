@@ -2,7 +2,7 @@ package com.sandao.javalearning.stream;
 
 import lombok.Data;
 
-import java.util.Map;
+import java.util.List;
 
 /**
  * @author maoyanting
@@ -13,6 +13,6 @@ import java.util.Map;
 public class User {
     private String name;
     private String sex;
-    private String age;
-    private Map<String,String> extend;
+    private Integer age;
+    private List<User> children;
 }
