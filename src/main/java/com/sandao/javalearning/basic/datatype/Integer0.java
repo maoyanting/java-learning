@@ -2,6 +2,7 @@ package com.sandao.javalearning.basic.datatype;
 
 /**
  * 整型
+ *
  * @author maoyanting
  * @version V1.0
  * @date 2019/07/29
@@ -10,12 +11,13 @@ public class Integer0 {
     public static void main(String[] args) {
         testNumberType();
         testCache();
+        calculate();
     }
 
     /**
      * jdk1.7以后，允许在数字之间增加下划线来提高代码可读性
      */
-    private static void testNumberType(){
+    private static void testNumberType() {
         int a = 100__000, b = 100000, c = 10_0000;
         System.out.println(a == b);
         System.out.println(b == c);
@@ -28,7 +30,7 @@ public class Integer0 {
      * 此处使用了自动装箱，实际上为调用 Integer.valueOf(125)
      * 缓存的主要原因在于 valueOf 方法中的 IntegerCache 内部类
      */
-    private static void testCache(){
+    private static void testCache() {
         Integer a = 125;
         Integer b = 125;
         Integer c = 129;
@@ -37,5 +39,15 @@ public class Integer0 {
         System.out.println(a == b);
         System.out.print("两个整型 129 对比：");
         System.out.println(d == c);
+    }
+
+    /**
+     * 基本计算
+     */
+    private static void calculate() {
+        /**
+         * 取余
+         */
+        System.out.println(4 % 2);
     }
 }

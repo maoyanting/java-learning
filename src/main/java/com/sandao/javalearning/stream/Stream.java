@@ -1,6 +1,6 @@
 package com.sandao.javalearning.stream;
 
-import com.google.common.collect.Lists;
+import com.sandao.javalearning.user.User;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -15,24 +15,10 @@ import java.util.stream.Collectors;
 public class Stream {
 
     public static void main(String[] args) {
-        List<User> userList = init();
+        List<User> userList = User.init();
         System.out.println("全部用户："+userList);
         testFindAny(userList);
         testMap(userList);
-    }
-
-    private static List<User> init(){
-        List<User> userList = Lists.newLinkedList();
-        List<String> nameList =  Arrays.asList("张三", "王五", "李白","杜甫","白居易");
-        Random random = new Random();
-        for (int j = 0; j < 5; j++) {
-            User user = new User();
-            user.setAge(random.nextInt(30));
-            user.setName(nameList.get(j));
-            user.setSex(random.nextBoolean()?"男":"女");
-            userList.add(user);
-        }
-        return userList;
     }
 
     private static void testFindAny(List<User> users) {
