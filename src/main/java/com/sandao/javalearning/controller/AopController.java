@@ -1,7 +1,7 @@
 package com.sandao.javalearning.controller;
 
 import com.sandao.javalearning.aop.annotation.MyAuth;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AopController {
 
-    @RequestMapping("/hello")
+    @GetMapping("/hello")
     @MyAuth(className = "hello word")
     public String testController(){
         return "hello word!";

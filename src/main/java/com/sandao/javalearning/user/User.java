@@ -1,8 +1,11 @@
 package com.sandao.javalearning.user;
 
 import com.google.common.collect.Lists;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -13,12 +16,21 @@ import java.util.Random;
  * @date 2019/08/03
  */
 @Data
+@ApiModel
 public class User {
+    @ApiModelProperty("姓名")
+    @NotBlank(groups = {ValidationStepOne.class})
     private String name;
+    @NotBlank(groups = {ValidationStepTwo.class})
     private String sex;
     private Integer age;
     private CareerEnum career;
     private List<User> children;
+
+    public interface ValidationStepOne {
+    }
+    public interface ValidationStepTwo {
+    }
 
     /**
      * 创建随机数据
