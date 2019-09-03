@@ -1,4 +1,4 @@
-package com.sandao.javalearning.stream;
+package com.sandao.javalearning.collection.stream;
 
 import com.sandao.javalearning.user.User;
 

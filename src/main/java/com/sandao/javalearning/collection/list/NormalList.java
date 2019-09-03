@@ -1,4 +1,4 @@
-package com.sandao.javalearning.list;
+package com.sandao.javalearning.collection.list;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;

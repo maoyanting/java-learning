@@ -1,4 +1,4 @@
-package com.sandao.javalearning.list;
+package com.sandao.javalearning.collection.list;
 
 /**
  * @author maoyanting

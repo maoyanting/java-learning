@@ -36,7 +36,7 @@ public class UserController {
         return "hello word!";
     }
 
-    @GetMapping("/testValidName")
+    @GetMapping("/testValidName2")
     @ApiOperation("校验用户接口")
     public String testValidName2(@Valid User user, BindingResult userBindingResult){
         //参数校验

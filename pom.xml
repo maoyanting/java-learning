@@ -47,6 +47,24 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--健康检查 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+<!--        &lt;!&ndash; mapstruct 实体类属性映射 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.mapstruct</groupId>-->
+<!--            <artifactId>mapstruct-jdk8</artifactId>-->
+<!--            <version>${mapstruct.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.mapstruct</groupId>-->
+<!--            <artifactId>mapstruct-processor</artifactId>-->
+<!--            <version>${mapstruct.version}</version>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
