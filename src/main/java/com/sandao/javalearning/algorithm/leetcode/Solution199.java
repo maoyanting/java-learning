@@ -25,7 +25,15 @@ public class Solution199 {
      * 5     4       <---
      */
     public static void main(String[] args) {
-
+        TreeNode node2 = new TreeNode(2);
+        TreeNode node3 = new TreeNode(3);
+        node2.right = new TreeNode(5);
+        node3.right = new TreeNode(4);
+        TreeNode root = new TreeNode(1);
+        root.left = node2;
+        root.right = node3;
+//        System.out.println(rightSideView(root));
+        System.out.println(rightSideViewMySelf(root));
     }
 
     public static List<Integer> rightSideView(TreeNode root) {
@@ -69,13 +77,47 @@ public class Solution199 {
         return rightView;
     }
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
+    public static List<Integer> rightSideViewMySelf(TreeNode root){
+        //要找每一层最右边的数字，所以每个数字都需要遍历
+        List<Integer> rightView = new LinkedList<>();
+        if (root == null){
+            return rightView;
         }
+        List<TreeNode> currentNodeList = new LinkedList<>();
+        List<TreeNode> nextNodeList =new LinkedList<>();
+        currentNodeList.add(root);
+        rightView.add(root.val);
+        int i = 0;
+        while (currentNodeList.size() != 0){
+            TreeNode node = currentNodeList.get(i);
+
+            if (node.left != null){
+                nextNodeList.add(node.left);
+            }
+            if (node.right != null){
+                nextNodeList.add(node.right);
+            }
+            if (i == currentNodeList.size()-1 ){
+                i = 0;
+                currentNodeList = nextNodeList;
+                if (nextNodeList.size() != 0){
+                    rightView.add(nextNodeList.get(nextNodeList.size()-1).val);
+                }
+                nextNodeList = new LinkedList<>();
+            }else {
+                i++;
+            }
+        }
+        return rightView;
     }
+
+//    public class TreeNode {
+//        int val;
+//        TreeNode left;
+//        TreeNode right;
+//
+//        TreeNode(int x) {
+//            val = x;
+//        }
+//    }
 }

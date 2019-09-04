@@ -14,6 +14,7 @@ public class StackTest {
         stack.push(3444);
         stack.push(3445);
         stack.push(3446);
+        stack.push(null);
         //出栈
         System.out.println("let first out :"+stack.pop());
         //判定是否为空
