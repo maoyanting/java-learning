@@ -1,4 +1,4 @@
-package com.sandao.javalearning.collection.list;
+package com.sandao.javalearning.collection;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
@@ -33,10 +33,10 @@ public class NormalList {
         apples = new ArrayList<>(apples);
         apples.add("bad apple");
         System.out.println("Collections.nCopies 产生的list："+apples);
-        // 4 jdk1.8 以后的 Stream 方法
+        // 4 jdk1.8 以后的 StreamTest 方法
         List<String> colors = Stream.of("blue", "red", "yellow").collect(Collectors.toList());
         colors.add("green");
-        System.out.println("Stream 产生的list："+colors);
+        System.out.println("StreamTest 产生的list："+colors);
         // 5 google 工具包
         List listB = Lists.newLinkedList();
         // 5.1 字符串转 list，产生的list不可编辑

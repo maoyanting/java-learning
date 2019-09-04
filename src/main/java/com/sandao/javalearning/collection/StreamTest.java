@@ -1,4 +1,4 @@
-package com.sandao.javalearning.collection.stream;
+package com.sandao.javalearning.collection;
 
 import com.sandao.javalearning.user.User;
 
@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * @version V1.0
  * @date 2019/08/02
  */
-public class Stream {
+public class StreamTest {
 
     public static void main(String[] args) {
         List<User> userList = User.init();

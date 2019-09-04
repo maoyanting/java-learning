@@ -1,4 +1,4 @@
-package com.sandao.javalearning.collection.map;
+package com.sandao.javalearning.collection;
 
 import java.util.HashMap;
 
