@@ -35,6 +35,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- junit4 单元测试 spring boot2 默认使用4.12 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
         <!-- aop 依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -75,6 +81,13 @@
             <artifactId>guava</artifactId>
             <groupId>com.google.guava</groupId>
             <version>27.1-jre</version>
+        </dependency>
+
+        <!-- 函数式库 要求JDK8以上 -->
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>0.9.0</version>
         </dependency>
 
         <!-- 参数校验 -->

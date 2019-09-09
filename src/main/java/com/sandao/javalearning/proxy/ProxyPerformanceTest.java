@@ -1,5 +1,7 @@
 package com.sandao.javalearning.proxy;
 
+import org.springframework.cglib.core.DebuggingClassWriter;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -8,13 +10,18 @@ import java.util.Map;
  * 总结 ：Cglib 创建代理对象的速度明显比JDK慢
  * JDK代理 执行方法的 速度会 随着执行次数的增加变快，会比CGlib还快
  * JDK8的情况下
+ * 同时，高版本的Spring会自行选择Cglib或者JDK做代理。
+ * Spring boot2 默认采用 Cglib 创建代理对象
  * @author maoyanting
  * @version V1.0
  * @date 2019/09/04
  */
 public class ProxyPerformanceTest {
     public static void main(String[] args) {
-        runTest();
+        //这里用于生成代理类的class文件，正常情况下class文件只存在于内存中
+        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "/Users/maoyanting/Documents/maoyantingCode/git/proxy-sandao");
+        Target cglibProxy = CglibProxyTest.newProxyInstance(TargetImpl.class);
+//        runTest();
     }
 
     //Cglib 执行方法的 速度会 随着执行次数的增加变快，会比JDK还快
