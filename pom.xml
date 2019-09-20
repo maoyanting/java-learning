@@ -71,12 +71,14 @@
 <!--            <version>${mapstruct.version}</version>-->
 <!--        </dependency>-->
 
+        <!-- 用于解析html文件-->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>1.9.2</version>
         </dependency>
 
+        <!-- guava google 提供的java基础库-->
         <dependency>
             <artifactId>guava</artifactId>
             <groupId>com.google.guava</groupId>

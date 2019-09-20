@@ -2,6 +2,7 @@ package com.sandao.javalearning.function;
 
 import com.sandao.javalearning.user.User;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -25,7 +26,8 @@ public class Function0 {
 //        testFunction();
 //        testPredicate();
 //        testOptional();
-        testRedoce();
+//        testRedoce();
+        testCompare();
     }
 
     /**
@@ -145,5 +147,19 @@ public class Function0 {
                     System.out.println("----当前年龄最大的用户---"+acc);
                     return acc.getAge() > item.getAge()?acc:item;
                 }).ifPresent(System.out::println);
+    }
+
+    /**
+     * compare 函数
+     */
+    private static void testCompare(){
+        List<User> users = User.init();
+        for (User user:users){
+            if (user.isBoy()){
+                System.out.println(user);
+            }
+        }
+//        users.sort(Comparator.comparing(User::getAge));
+//        System.out.println(users);
     }
 }

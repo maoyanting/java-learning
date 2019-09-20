@@ -49,4 +49,8 @@ public class User {
         }
         return userList;
     }
+
+    public Boolean isBoy(){
+        return "男".equals(sex);
+    }
 }
