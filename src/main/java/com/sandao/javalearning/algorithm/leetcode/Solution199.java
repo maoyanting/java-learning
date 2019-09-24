@@ -32,7 +32,6 @@ public class Solution199 {
         TreeNode root = new TreeNode(1);
         root.left = node2;
         root.right = node3;
-//        System.out.println(rightSideView(root));
         System.out.println(rightSideViewMySelf(root));
     }
 
@@ -111,13 +110,4 @@ public class Solution199 {
         return rightView;
     }
 
-//    public class TreeNode {
-//        int val;
-//        TreeNode left;
-//        TreeNode right;
-//
-//        TreeNode(int x) {
-//            val = x;
-//        }
-//    }
 }
