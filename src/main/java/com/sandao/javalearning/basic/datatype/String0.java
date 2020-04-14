@@ -29,4 +29,15 @@ public class String0 {
         System.out.println(word.trim());
     }
 
+    private static void testSpilt(){
+        String range = "1-5";
+        String range2 = "100-";
+        String[] rangeS1 = range.split("-");
+        String[] rangeS2 = range2.split("-");
+        System.out.println(rangeS1[0]);
+        System.out.println(rangeS1[1]);
+        System.out.println(rangeS2[0]);
+        System.out.println(rangeS2[1]);
+    }
+
 }

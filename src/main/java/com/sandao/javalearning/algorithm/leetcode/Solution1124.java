@@ -1,6 +1,10 @@
 package com.sandao.javalearning.algorithm.leetcode;
 
+
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * We are given hours, a list of the number of hours worked per day for a given employee.
@@ -27,6 +31,9 @@ public class Solution1124 {
     /**
      * 题目分解下来就是 每一段时间内的 大于8的次数要大于小于8的次数，寻找最长的时间段
      * 数据量巨大的情况下，考虑到n^2 的时间会超长，需要优化
+     * how to update it ?
+     * if it is 每次都获取一部分
+     * duiyu j laishuo i yijing bianli guo  yibenfen l ,suoyi qishi
      *
      */
     public static int longestWPI(int[] hours) {
@@ -50,6 +57,20 @@ public class Solution1124 {
             }
             if (count[i] > max){
                 max = count[i];
+            }
+        }
+        return max;
+    }
+
+    public static int longestWPI2(int[] hours) {
+        int length = hours.length;
+        int[] count = new int[length];
+        Map<Integer, List<Integer>> integerListMap = new HashMap<>();
+        Arrays.fill(count,0);
+        int max = 0;
+        for (int i = 0;i < length;i++){
+            for (int j = 0;j < length; j++){
+
             }
         }
         return max;

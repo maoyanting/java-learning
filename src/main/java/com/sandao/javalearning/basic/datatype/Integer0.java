@@ -12,6 +12,7 @@ public class Integer0 {
         testNumberType();
         testCache();
         calculate();
+        System.out.println(f(9));
     }
 
     /**
@@ -49,5 +50,17 @@ public class Integer0 {
          * 取余
          */
         System.out.println(4 % 2);
+    }
+
+    /**
+     * 求 1+2+3+4+。。。+ n，要求不能使用乘除法、for、 while、 if、else、switch、case 等关键字以及条件判断
+     * @param n
+     * @return
+     */
+    private static int f(int n) {
+        if (0 == n) {
+            return n;
+        }
+        return f(n - 1) + n;
     }
 }

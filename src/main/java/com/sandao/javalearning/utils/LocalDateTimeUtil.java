@@ -15,13 +15,19 @@ public class LocalDateTimeUtil {
 
 
     public static void main(String[] args) {
-        LocalDateTime now = LocalDateTime.now();
-        LocalDate localDate = now.toLocalDate();
-        LocalTime localTime = now.toLocalTime();
-        System.out.println("当前时间：" + now);
-        System.out.println("当前日期：" + localDate);
-        System.out.println("当前日期：" + LocalDate.now());
-        System.out.println("当前时间（24小时制）：" + localTime);
+        LocalDate now = LocalDate.now();
+        LocalDate nextDay = now.plusDays(1);
+        LocalDate nextMouth = now.plusMonths(1);
+        System.out.println(nextDay);
+        System.out.println(nextMouth);
+
+        System.out.println(!now.isAfter(now));
+//        LocalDate localDate = now.toLocalDate();
+//        LocalTime localTime = now.toLocalTime();
+//        System.out.println("当前时间：" + now);
+//        System.out.println("当前日期：" + localDate);
+//        System.out.println("当前日期：" + LocalDate.now());
+//        System.out.println("当前时间（24小时制）：" + localTime);
 
     }
 

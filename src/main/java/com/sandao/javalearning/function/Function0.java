@@ -2,10 +2,7 @@ package com.sandao.javalearning.function;
 
 import com.sandao.javalearning.user.User;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -147,6 +144,35 @@ public class Function0 {
                     System.out.println("----当前年龄最大的用户---"+acc);
                     return acc.getAge() > item.getAge()?acc:item;
                 }).ifPresent(System.out::println);
+    }
+
+    /**
+     * 出现最多的单词
+     */
+    public static void testCompareList(){
+        //读取
+        Map<String,Integer> map = new HashMap<>();
+        Scanner in = new Scanner(System.in);
+        while (in.hasNext())
+        {
+            String word = in.next();
+            word =word.replace(",", " ").replace(".", " ").replace("\"", " ").replace("“", " ").replace("”", " ").replace(";", " ");
+            if (!map.containsKey(word)) {
+                map.put(word, 1);
+            } else {
+                map.put(word, (map.get(word)+1));
+            }
+        }
+        //排序
+        List<Map.Entry<String, Integer>> arraylist = new ArrayList<>(map.entrySet());
+        arraylist.sort((obj1, obj2) -> (obj2.getValue()).compareTo(obj1.getValue()));
+        // 输出次数前20的单词
+        List<Map.Entry<String, Integer>> list = arraylist.subList(0, 20);
+        System.out.println("出现频率前20的单词：");
+        for (Map.Entry<String, Integer> item : list) {
+            System.out.println(item.getKey() + "=" + item.getValue());
+        }
+
     }
 
     /**

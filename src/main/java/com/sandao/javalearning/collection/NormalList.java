@@ -15,7 +15,12 @@ import java.util.stream.Stream;
  */
 public class NormalList {
     public static void main(String[] args) {
-        testInit();
+
+        String[] params = new String[3];
+        params[0] = "发发发";
+        params[1] = "发发的发";
+        params[2] = "啊啊啊啊";
+        System.out.println(Arrays.toString(params));
     }
 
     public static void testInit(){
@@ -46,6 +51,8 @@ public class NormalList {
         listC = new ArrayList<>(listC);
         listC.add("8");
         System.out.println("google工具包 产生的list："+listC);
+        //6 空列表 不可编辑
+        List<String> emptyList = Collections.emptyList();
 
     }
 }
