@@ -1,5 +1,6 @@
 package com.sandao.javalearning.collection;
 
+import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 
@@ -16,11 +17,7 @@ import java.util.stream.Stream;
 public class NormalList {
     public static void main(String[] args) {
 
-        String[] params = new String[3];
-        params[0] = "发发发";
-        params[1] = "发发的发";
-        params[2] = "啊啊啊啊";
-        System.out.println(Arrays.toString(params));
+        testInit();
     }
 
     public static void testInit(){
@@ -53,6 +50,11 @@ public class NormalList {
         System.out.println("google工具包 产生的list："+listC);
         //6 空列表 不可编辑
         List<String> emptyList = Collections.emptyList();
+
+        //
+        List<String> jdks2 = Arrays.asList("JDK6");
+        String dingMessageDing = Joiner.on(",").skipNulls().join(jdks2);
+        System.out.println(dingMessageDing);
 
     }
 }

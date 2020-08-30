@@ -1,5 +1,7 @@
 package com.sandao.javalearning.basic.datatype;
 
+import java.math.BigDecimal;
+
 /**
  * 整型
  *
@@ -9,10 +11,11 @@ package com.sandao.javalearning.basic.datatype;
  */
 public class Integer0 {
     public static void main(String[] args) {
-        testNumberType();
-        testCache();
-        calculate();
-        System.out.println(f(9));
+//        testNumberType();
+//        testCache();
+//        calculate();
+        calculate2();
+//        System.out.println(f(9));
     }
 
     /**
@@ -50,6 +53,13 @@ public class Integer0 {
          * 取余
          */
         System.out.println(4 % 2);
+    }
+
+    private static void calculate2(){
+        String num = "220000.00";
+        BigDecimal nudd = new BigDecimal(num).multiply(new BigDecimal("100"));
+        Long b = nudd.longValue();
+        System.out.println(b);
     }
 
     /**
