@@ -1,4 +1,4 @@
-package com.sandao.javalearning.collection;
+package com.sandao.javalearning.algorithm;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import lombok.extern.slf4j.Slf4j;

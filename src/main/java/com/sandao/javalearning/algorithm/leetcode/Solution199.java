@@ -1,8 +1,12 @@
 package com.sandao.javalearning.algorithm.leetcode;
 
+import com.google.common.collect.Lists;
+
 import java.util.*;
 
 /**
+ * 重复
+ *
  * @author maoyanting
  * @version V1.0
  * @date 2019/09/04
@@ -32,7 +36,7 @@ public class Solution199 {
         TreeNode root = new TreeNode(1);
         root.left = node2;
         root.right = node3;
-        System.out.println(rightSideViewMySelf(root));
+        System.out.println(leftSideViewMySelf(root));
     }
 
     public static List<Integer> rightSideView(TreeNode root) {
@@ -78,36 +82,58 @@ public class Solution199 {
 
     public static List<Integer> rightSideViewMySelf(TreeNode root){
         //要找每一层最右边的数字，所以每个数字都需要遍历
-        List<Integer> rightView = new LinkedList<>();
-        if (root == null){
-            return rightView;
-        }
-        List<TreeNode> currentNodeList = new LinkedList<>();
-        List<TreeNode> nextNodeList =new LinkedList<>();
-        currentNodeList.add(root);
-        rightView.add(root.val);
+        List<TreeNode> currentTreeNodes = Lists.newLinkedList();
+        List<TreeNode> nextTreeNodes = Lists.newLinkedList();
+        List<Integer> rightSide = Lists.newLinkedList();
+        currentTreeNodes.add(root);
         int i = 0;
-        while (currentNodeList.size() != 0){
-            TreeNode node = currentNodeList.get(i);
-
-            if (node.left != null){
-                nextNodeList.add(node.left);
+        while(!currentTreeNodes.isEmpty()){
+            TreeNode treeNode = currentTreeNodes.get(i);
+            if (treeNode.left != null){
+                nextTreeNodes.add(treeNode.left);
             }
-            if (node.right != null){
-                nextNodeList.add(node.right);
+            if (treeNode.right != null){
+                nextTreeNodes.add(treeNode.right);
             }
-            if (i == currentNodeList.size()-1 ){
+            if (i == currentTreeNodes.size()-1){
+                currentTreeNodes = nextTreeNodes;
+                nextTreeNodes = Lists.newLinkedList();
                 i = 0;
-                currentNodeList = nextNodeList;
-                if (nextNodeList.size() != 0){
-                    rightView.add(nextNodeList.get(nextNodeList.size()-1).val);
-                }
-                nextNodeList = new LinkedList<>();
+                rightSide.add(treeNode.val);
             }else {
                 i++;
             }
         }
-        return rightView;
+       return rightSide;
+    }
+
+    public static List<Integer> leftSideViewMySelf(TreeNode root){
+        //要找每一层最右边的数字，所以每个数字都需要遍历
+        List<TreeNode> currentTreeNodes = Lists.newLinkedList();
+        List<TreeNode> nextTreeNodes = Lists.newLinkedList();
+        List<Integer> rightSide = Lists.newLinkedList();
+        currentTreeNodes.add(root);
+        int i = 0;
+        while(!currentTreeNodes.isEmpty()){
+            TreeNode treeNode = currentTreeNodes.get(i);
+            if (treeNode.left != null){
+                nextTreeNodes.add(treeNode.left);
+            }
+            if (treeNode.right != null){
+                nextTreeNodes.add(treeNode.right);
+            }
+            if (i == 0){
+                rightSide.add(treeNode.val);
+            }
+            if (i == currentTreeNodes.size()-1){
+                currentTreeNodes = nextTreeNodes;
+                nextTreeNodes = Lists.newLinkedList();
+                i = 0;
+            }else {
+                i++;
+            }
+        }
+        return rightSide;
     }
 
 }

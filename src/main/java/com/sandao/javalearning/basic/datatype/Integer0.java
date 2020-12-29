@@ -14,7 +14,7 @@ public class Integer0 {
 //        testNumberType();
 //        testCache();
 //        calculate();
-        calculate2();
+//        calculate2();
 //        System.out.println(f(9));
     }
 
@@ -55,7 +55,7 @@ public class Integer0 {
         System.out.println(4 % 2);
     }
 
-    private static void calculate2(){
+    private static void calculate2() {
         String num = "220000.00";
         BigDecimal nudd = new BigDecimal(num).multiply(new BigDecimal("100"));
         Long b = nudd.longValue();
@@ -64,6 +64,7 @@ public class Integer0 {
 
     /**
      * 求 1+2+3+4+。。。+ n，要求不能使用乘除法、for、 while、 if、else、switch、case 等关键字以及条件判断
+     *
      * @param n
      * @return
      */
